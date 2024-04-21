@@ -1,6 +1,6 @@
 import { Bot } from "grammy";
 import { createServer } from "http";
-import "./job";
+import "./job.js";
 
 const bot = new Bot("6666871515:AAHkpjn_aSj08IItJzELf4xr-7qarSMcnw0"); // <-- Enter Bot Token Here
 
