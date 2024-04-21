@@ -1,4 +1,6 @@
 import { Bot } from "grammy";
+import { createServer } from "http";
+import "./job";
 
 const bot = new Bot("6666871515:AAHkpjn_aSj08IItJzELf4xr-7qarSMcnw0"); // <-- Enter Bot Token Here
 
@@ -18,6 +20,15 @@ bot.hears("ثانیه", (ctx) => {
       parse_mode: "HTML",
     }
   );
+});
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.end();
+});
+
+server.listen(10000, () => {
+  console.log("HTTP server is running");
 });
 
 bot.start({ onStart: () => console.log("Bot Started Successfuly") });
