@@ -1,7 +1,7 @@
 import { CronJob } from "cron";
 import * as https from "https";
 
-const backendUrl = "https://mahbodsr.ir";
+const backendUrl = "https://bot-f8i7.onrender.com";
 new CronJob("*/10 * * * *", () => {
   https
     .get(backendUrl, (res) => {
