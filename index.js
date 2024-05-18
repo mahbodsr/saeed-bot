@@ -1,10 +1,15 @@
 import { Bot } from "grammy";
 import { createServer } from "http";
+import { apiThrottler } from "@grammyjs/transformer-throttler";
+import { autoRetry } from "@grammyjs/auto-retry";
 import "./job.js";
 
 process.env.TZ = "Asia/Tehran";
 
 const bot = new Bot("6666871515:AAHkpjn_aSj08IItJzELf4xr-7qarSMcnw0"); // <-- Enter Bot Token Here
+
+bot.api.config.use(apiThrottler());
+bot.api.config.use(autoRetry());
 
 bot.hears("ثانیه", (ctx) => {
   if (!ctx.message?.reply_to_message) return;
