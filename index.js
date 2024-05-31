@@ -6,7 +6,7 @@ import "./job.js";
 
 process.env.TZ = "Asia/Tehran";
 
-const bot = new Bot("6666871515:AAHkpjn_aSj08IItJzELf4xr-7qarSMcnw0"); // <-- Enter Bot Token Here
+const bot = new Bot(process.env.BOT_TOKEN); // <-- Enter Bot Token Here
 
 bot.api.config.use(apiThrottler());
 bot.api.config.use(autoRetry());
